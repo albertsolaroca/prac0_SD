@@ -60,6 +60,15 @@ public class ComUtils {
         dataOutputStream.write(bStr, 0,STRSIZE);
     }
 
+    public char read_char() throws IOException{
+        byte[] bytes = read_bytes(1);
+        return (char) bytes[0];
+    }
+
+    public void write_char(char c)throws IOException{
+        dataOutputStream.write(c);
+    }
+
     private byte[] int32ToBytes(int number, Endianness endianness) {
         byte[] bytes = new byte[4];
 

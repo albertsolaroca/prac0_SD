@@ -24,4 +24,20 @@ public class ComUtilsTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void char_test(){
+        File file = new File("test");
+        try {
+            file.createNewFile();
+            ComUtils comUtils = new ComUtils(new FileInputStream(file), new FileOutputStream(file));
+            comUtils.write_char('c');
+            char readedChar = comUtils.read_char();
+
+            assertEquals('c', readedChar);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
